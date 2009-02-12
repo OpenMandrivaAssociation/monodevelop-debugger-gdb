@@ -1,5 +1,5 @@
 Name:     	monodevelop-debugger-gdb
-Version:	1.9.1
+Version:	1.9.2
 Release:	%mkrel 1
 License:	MIT
 BuildArch:      noarch
@@ -26,10 +26,6 @@ Monodevelop Addin to integrate the GNU debugger.
 %install
 rm -rf "$RPM_BUILD_ROOT" %name.lang
 %makeinstall_std
-mkdir -p $RPM_BUILD_ROOT%_prefix/share/pkgconfig
-mv $RPM_BUILD_ROOT%_prefix/lib/pkgconfig/*.pc $RPM_BUILD_ROOT%_prefix/share/pkgconfig
-#gw fix pkgconfig file:
-perl -pi -e "s/^Version.*/Version:%version/" %buildroot%_datadir/pkgconfig/monodevelop.debugger.gdb.pc
 
 %clean
 rm -rf "$RPM_BUILD_ROOT"
@@ -37,4 +33,3 @@ rm -rf "$RPM_BUILD_ROOT"
 %files
 %defattr(-, root, root)
 %_prefix/lib/monodevelop/AddIns/MonoDevelop.Debugger/
-%_datadir/pkgconfig/monodevelop.debugger.gdb.pc
