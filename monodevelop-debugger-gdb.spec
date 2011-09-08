@@ -1,10 +1,10 @@
 Name:     	monodevelop-debugger-gdb
-Version:	2.4
-Release:	%mkrel 2
+Version:	2.6
+Release:	%mkrel 1
 License:	MIT
 BuildArch:      noarch
 URL:		http://www.go-mono.com
-Source0:	http://ftp.novell.com/pub/mono/sources/monodevelop-debugger-gdb/%{name}-%{version}.tar.bz2
+Source0:	http://download.mono-project.com/monodevelop/source/%name-%version.tar.gz
 BuildRequires:  monodevelop >= %version
 BuildRequires:  mono-devel
 Requires: gdb
